@@ -1,0 +1,143 @@
+﻿@model WalletViewModel
+@using Core.Utilities.Constants
+@{
+    ViewBag.Title = "Game";
+}
+
+@section Scripts{
+    <script src="~/admin-app/controllers/game/index.js"></script>
+    <script src="~/admin-app/shared/dapp-helper.js" asp-append-version="true"></script>
+    <script>
+        var game = new GameController();
+        game.initialize();
+        var dapp = new DAppHelper.DApp();
+        dapp.init();
+    </script>
+}
+
+@section Styles{
+}
+
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <div class="container" id="kt_content_container">
+        <div class="card">
+            <div class="card-body ">
+                <div class="mb-10 mt-10">
+                    <div class="row g-10">
+                        <div class="col-md-4">
+                            <div class="card-xl-stretch me-md-6">
+                                <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5"
+                                   style="background-image: url('/images/games/luckyround/logoluckyround.png')" data-fslightbox="lightbox-video-tutorials"
+                                   href="/admin/game/luckyround">
+                                </a>
+                                <div class="m-0">
+                                    <a href="/admin/game/luckyround" class="fs-5 text-gray-700 fw-bolder text-hover-primary lh-base">Lucky Spin</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-xl-stretch me-md-6">
+                                <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5"
+                                   style="background-image: url('/images/games/Crash.png')" data-fslightbox="lightbox-video-tutorials"
+                                   href="#">
+                                </a>
+                                <div class="m-0">
+                                    <a href="#" class="fs-5 text-gray-700 fw-bolder text-hover-primary lh-base">Coming Soon...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-xl-stretch me-md-6">
+                                <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5"
+                                   style="background-image: url('/images/games/CrashTrenball.png')" data-fslightbox="lightbox-video-tutorials"
+                                   href="#">
+                                </a>
+                                <div class="m-0">
+                                    <a href="#" class="fs-5 text-gray-700 fw-bolder text-hover-primary lh-base">Coming Soon...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-xl-stretch me-md-6">
+                                <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5"
+                                   style="background-image: url('/images/games/ClassicDice.png')" data-fslightbox="lightbox-video-tutorials"
+                                   href="#">
+                                </a>
+                                <div class="m-0">
+                                    <a href="#" class="fs-5 text-gray-700 fw-bolder text-hover-primary lh-base">Coming Soon...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-xl-stretch me-md-6">
+                                <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5"
+                                   style="background-image: url('/images/games/Limbo.png')" data-fslightbox="lightbox-video-tutorials"
+                                   href="#">
+                                </a>
+                                <div class="m-0">
+                                    <a href="#" class="fs-5 text-gray-700 fw-bolder text-hover-primary lh-base">Coming Soon...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card-xl-stretch me-md-6">
+                                <a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5"
+                                   style="background-image: url('/images/games/Blackjack.png')" data-fslightbox="lightbox-video-tutorials"
+                                   href="#">
+                                </a>
+                                <div class="m-0">
+                                    <a href="#" class="fs-5 text-gray-700 fw-bolder text-hover-primary lh-base">Coming Soon...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mt-20 mt-xl-20 mb-xl-10">
+            <div class="card-header align-items-center border-0">
+                <h3 class="card-title fw-bolder text-dark fs-5">Wallet Ticket Transaction</h3>
+            </div>
+            <div class="card-body py-3">
+                <div class="table-responsive">
+                    <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                        <thead>
+                            <tr class="fw-bolder text-muted">
+                                <th class="min-w-90px">Sponsor<br />UserName</th>
+                                <th class="min-w-100px">Type</th>
+                                <th class="min-w-90px">Amount</th>
+                                <th class="">Address From<br />Address To</th>
+                                <th class="min-w-150px">Created Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbl-content"></tbody>
+                    </table>
+                </div>
+                @await Component.InvokeAsync("Paging")
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td>
+            <a href="#" class=" fw-bold text-muted text-hover-primary d-block fs-7">{{Sponsor}}</a>
+            <a href="#" class="fw-bold text-muted text-hover-primary d-block fs-7">{{UserName}}</a>
+        </td>
+        <td>
+            <a href="#" class="text-dark fw-bold text-hover-primary d-block fs-7">{{TypeName}}</a>
+        </td>
+        <td>
+            <a href="#" class="text-dark fw-bold text-hover-primary d-block fs-7">{{Amount}}</a>
+        </td>
+        <td>
+            <a href="#" class="fw-bold text-white text-hover-primary d-block fs-7">{{AddressFrom}}</a>
+            <a href="#" class="fw-bold text-muted text-hover-primary d-block fs-7">{{AddressTo}}</a>
+        </td>
+        <td>
+            <span class="text-muted fw-bold text-muted d-block fs-7">{{DateCreated}}</span>
+        </td>
+    </tr>
+</script>

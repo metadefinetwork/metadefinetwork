@@ -1,0 +1,195 @@
+﻿@*<div id="particles-js"></div>*@
+
+<header class="nk-header page-header is-transparent is-sticky is-shrink" id="header">
+    <!-- Header  -->
+    <div class="header-main">
+        <div class="header-container container">
+            <div class="header-wrap">
+                <!-- Logo  -->
+                <div class="header-logo logo animated" data-animate="fadeInDown" data-delay=".65">
+                    <a href="./" class="logo-link">
+                        <img class="logo-dark" src="~/images/metadefiwhite.png" alt="logo">
+                        <img class="logo-light" src="~/images/metadefiwhite.png" alt="logo">
+                    </a>
+                </div>
+                <!-- Menu Toogle  -->
+                <div class="header-nav-toggle">
+                    <a href="#" class="navbar-toggle" data-menu-toggle="example-menu-04">
+                        <div class="toggle-line">
+                            <span></span>
+                        </div>
+                    </a>
+                </div>
+                <!-- Menu  -->
+                <div class="header-navbar header-navbar-s3">
+                    <nav class="header-menu justify-content-between" id="example-menu-04">
+                        <ul class="menu menu-s2 animated" data-animate="fadeInDown" data-delay=".75">
+                            <li class="menu-item"><a class="menu-link nav-link" href="#partner">Partners</a></li>
+                            <li class="menu-item"><a class="menu-link nav-link" href="#roadmap">Roadmap</a></li>
+                            <li class="menu-item"><a class="menu-link nav-link" href="#token">Tokens</a></li>
+                            <li class="menu-item"><a class="menu-link nav-link" href="#game">Game</a></li>
+                            <li class="menu-item"><a class="menu-link nav-link" href="#team">Team</a></li>
+                            <li class="menu-item"><a class="menu-link nav-link" href="#news">News</a></li>
+                            <li class="menu-item has-sub">
+                                <a class="menu-link nav-link menu-toggle" href="#">More</a>
+                                <ul class="menu-sub menu-drop">
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#faqs">Faqs</a></li>
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#contact">Contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="menu-btns align-items-center animated" data-animate="fadeInDown" data-delay=".85">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a href="/dashboard" class="btn btn-rg btn-round btn-info"><span>System</span></a></li>
+                            }
+                            else
+                            {
+                                <li><a href="/login" class="btn btn-rg btn-round btn-info"><span>Login</span></a></li>
+                                <li><a href="/register" class="btn btn-rg btn-auto btn-outline btn-info on-bg-theme btn-round"><span>Register</span></a></li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-banner bg-light ov-h header-banner-jasmine">
+        <div class="background-shape"></div>
+        <div class="nk-banner">
+            <div class="banner banner-fs banner-single">
+                <!-- .block  -->
+                <div class="nk-block nk-block-header my-auto">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-center justify-content-lg-between">
+
+                            <div class="col-lg-7 text-center text-lg-left">
+                                <div class="banner-caption cpn tc-light">
+                                    <div class="cpn-head">
+                                        <span style="font-size: 28px; text-transform: uppercase; font-family: grinddemolished; font-weight: 400; margin-bottom: 0; color: white;" data-animate="fadeInUp" data-delay="1.35">
+                                            🌐 ANNOUNCEMENT ABOUT CLAIM MAR
+                                        </span>
+                                    </div>
+                                    <div class="cpn-text">
+                                        <span>✅ Total: 3,000,000.000 MAR Token</span><br />
+                                        <span>✅ Price: $0.0020</span><br />
+                                        <span style="color: black; text-shadow: 0 0 10px white; font-weight: 900;">You can only claim once for 1 wallet address, you will get 50,000 MAR, fee claim $20</span>
+                                        <br /><br />
+                                        <strong>🔥 Affiliate commission policy:</strong>
+                                        <ul>
+                                            <li>🎁 <strong>Level 1: 4,000 MAR</strong></li>
+                                            <li>🎁 <strong>Level 2: 2,000 MAR</strong></li>
+                                            <li>🎁 <strong>Level 3: 2,000 MAR</strong></li>
+                                            <li>🎁 <strong>Level 4: 1,000 MAR</strong></li>
+                                            <li>🎁 <strong>Level 5: 1,000 MAR</strong></li>
+                                        </ul>
+
+                                        <span style="color: #ffe500; text-shadow: 0 0 3px #292c2d; font-weight: 900;">
+                                            👉 Send the link to your friends to get more commissions with MAR.
+                                        </span>
+                                    </div>
+                                    <div class="cpn-action">
+                                        <ul class="cpn-links animated" data-animate="fadeInUp" data-delay="1.55">
+                                            <li>
+                                                <a href="/register" class="btn btn-md btn-info"
+                                                   style="background: linear-gradient( 45deg, #ffbf00, #6cd5fe); border: 2px solid #272525;">Register to join</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-md btn-grad"
+                                                   style="background: linear-gradient( 45deg, #9c27b0, #ff5722); border: 2px solid #d8d8d8;">Whitepaper</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 order-lg-last animated claim-box" data-animate="fadeInUp" data-delay="1.25">
+                                @*<div class="banner-gfx banner-gfx-re-s5 op-30">
+                                        <img src="images/header/gfx-f.png" alt="header">
+                                    </div>*@
+                                <div class="abs-center w-100 index-9">
+                                    <div class="token-status token-status-s5 no-bd round animated" data-animate="fadeInUp" data-delay="1.35">
+                                        <h4 class="title title-xs-alt tc-default" style="color:white !important;font-size:20px !important;">CLAIM MAR TOKEN <br class="d-none d-xl-block"> STARTING IN</h4>
+
+                                        <div class="countdown-s3 countdown-s4 countdown" data-date="2021/12/04"></div>
+                                        <div class="nk-block-text" style="margin-top:40px;">
+                                            <form class="nk-form-submit" method="post">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="field-item animated fadeInUp" data-animate="fadeInUp" data-delay="0.8" style="visibility: visible; animation-delay: 0.8s;">
+                                                            <label class="field-label ttu">Your Registered Email (*)</label>
+                                                            <div class="field-wrap">
+                                                                <input id="txtFullName" type="text" class="input-bordered dapp_email">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="field-item animated fadeInUp" data-animate="fadeInUp" data-delay="0.9" style="visibility: visible; animation-delay: 0.9s;">
+                                                            <label class="field-label ttu">Amount Received MAR</label>
+                                                            <div class="field-wrap">
+                                                                <input id="txtTitle" type="text" class="input-bordered" value="50,000.00" disabled>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="field-item animated fadeInUp" data-animate="fadeInUp" data-delay="0.8" style="visibility: visible; animation-delay: 0.8s;">
+                                                            <label class="field-label ttu">Your Address (*)</label>
+                                                            <div class="field-wrap">
+                                                                <textarea id="txtFullName" class="input-bordered dapp_address" readonly></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="token-action">
+                                            <button type="button" class="btn btn-sm btn-secondary dapp_button" data-text="Claim MAR" data-action="claim">
+                                                <span class="dapp_button_connected d-none">Claim Now</span>
+                                                <span class="dapp_button_disconnected">Claim Now</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="col-lg-9 text-center">
+                                    <div class="banner-caption">
+                                        <div class="cpn-head">
+                                            <h1 class="title title-xl-2 animated"
+                                                style="font-family: grinddemolished; color: rgb(242 217 0); visibility: visible;
+                                                        animation-delay: 1.25s; text-shadow: -3px 3px 6px #141515;"
+                                                data-animate="fadeInUp" data-delay="1.25">
+                                                MetaDeFi
+                                                <br class="d-none d-xl-block">
+                                                Claim MAR Token
+                                            </h1>
+                                        </div>
+                                        <div class="cpn-text cpn-text-s2">
+                                            <p class="lead-s2 animated" data-animate="fadeInUp" data-delay="1.35"
+                                               style="visibility: visible; animation-delay: 1.35s; text-align: justify;
+                                                color: white !important; font-size: 22px !important; text-shadow: -2px 1px 2px #008eff;">
+                                                MetaDeFi will be released on the basis of BNB BSC platform and fully comply with BEP20 standard.
+                                                Support of this standard guarantees the compatibility of the token with third-party services (wallets, exchanges, listings, etc.), and provides easy integration.
+                                            </p>
+                                        </div>
+                                        <div class="cpn-action">
+                                            <ul class="cpn-links animated" data-animate="fadeInUp" data-delay="1.45">
+                                                <li><a class="link link-primary" href="#"><em class="link-icon icon-circle ti ti-files"></em> <span>White Paper</span></a></li>
+                                                <li><a class="link link-primary video-play" href="/login"><em class="link-icon icon-circle ti ti-control-play"></em> <span>Claim Token</span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>*@
+                        </div><!-- .row -->
+                    </div>
+                </div><!-- .block  -->
+                <!-- .block  -->
+
+            </div>
+        </div>
+        <div class="bg-image" data-overlay="theme" data-opacity="85"><img src="~/images/banner.jpg" /></div>
+    </div>
+</header>

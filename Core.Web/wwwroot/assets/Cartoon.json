@@ -1,0 +1,146 @@
+{
+	"textures": [
+		{
+			"image": "Cartoon.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 961,
+				"h": 170
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 44,
+						"w": 244,
+						"h": 168
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 244,
+						"h": 168
+					}
+				},
+				{
+					"filename": "6.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 44,
+						"w": 244,
+						"h": 168
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 244,
+						"h": 168
+					}
+				},
+				{
+					"filename": "3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 44,
+						"w": 240,
+						"h": 168
+					},
+					"frame": {
+						"x": 247,
+						"y": 1,
+						"w": 240,
+						"h": 168
+					}
+				},
+				{
+					"filename": "5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 44,
+						"w": 240,
+						"h": 168
+					},
+					"frame": {
+						"x": 247,
+						"y": 1,
+						"w": 240,
+						"h": 168
+					}
+				},
+				{
+					"filename": "1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 44,
+						"w": 251,
+						"h": 167
+					},
+					"frame": {
+						"x": 489,
+						"y": 1,
+						"w": 251,
+						"h": 167
+					}
+				},
+				{
+					"filename": "4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 256,
+						"h": 256
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 44,
+						"w": 218,
+						"h": 164
+					},
+					"frame": {
+						"x": 742,
+						"y": 1,
+						"w": 218,
+						"h": 164
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:c73c7c88fee6445f8540cb04415d7c49:e10d43b6a31d3b021ad39ec441e789a4:948dac9c76029684d0ac50b5bcbf098f$"
+	}
+}

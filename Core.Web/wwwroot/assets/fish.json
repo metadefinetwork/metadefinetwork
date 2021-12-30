@@ -1,0 +1,188 @@
+{
+	"textures": [
+		{
+			"image": "fishtuna.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 504,
+				"h": 1440
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "tunafish_001",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 502,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 502,
+						"h": 286
+					}
+				},
+				{
+					"filename": "tunafish_002",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 487,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 289,
+						"w": 487,
+						"h": 286
+					}
+				},
+				{
+					"filename": "tunafish_003",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 487,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 289,
+						"w": 487,
+						"h": 286
+					}
+				},
+				{
+					"filename": "tunafish_004",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 472,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 577,
+						"w": 472,
+						"h": 286
+					}
+				},
+				{
+					"filename": "tunafish_005",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 472,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 577,
+						"w": 472,
+						"h": 286
+					}
+				},
+				{
+					"filename": "tunafish_006",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 460,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 865,
+						"w": 460,
+						"h": 286
+					}
+				},
+				{
+					"filename": "tunafish_007",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 456,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 1153,
+						"w": 456,
+						"h": 286
+					}
+				},
+				{
+					"filename": "tunafish_008",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 512,
+						"h": 300
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 456,
+						"h": 286
+					},
+					"frame": {
+						"x": 1,
+						"y": 1153,
+						"w": 456,
+						"h": 286
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:d4a062f343fea70afa99c9663ac132ab:5b230d0ef6a81707fbf162bfd4f0a536:6cb02c6e6c0853a0cb304bf467a4c022$"
+	}
+}

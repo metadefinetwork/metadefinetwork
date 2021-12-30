@@ -1,0 +1,398 @@
+{
+	"textures": [
+		{
+			"image": "emeraldo-0.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 2024,
+				"h": 485
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "__fish_6_orange_idle_009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1,
+						"w": 215,
+						"h": 242
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 215,
+						"h": 242
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 221,
+						"h": 239
+					},
+					"frame": {
+						"x": 1,
+						"y": 245,
+						"w": 221,
+						"h": 239
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1,
+						"w": 217,
+						"h": 241
+					},
+					"frame": {
+						"x": 218,
+						"y": 1,
+						"w": 217,
+						"h": 241
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 220,
+						"h": 240
+					},
+					"frame": {
+						"x": 224,
+						"y": 244,
+						"w": 220,
+						"h": 240
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1,
+						"w": 216,
+						"h": 241
+					},
+					"frame": {
+						"x": 437,
+						"y": 1,
+						"w": 216,
+						"h": 241
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 220,
+						"h": 240
+					},
+					"frame": {
+						"x": 446,
+						"y": 244,
+						"w": 220,
+						"h": 240
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1,
+						"w": 216,
+						"h": 241
+					},
+					"frame": {
+						"x": 655,
+						"y": 1,
+						"w": 216,
+						"h": 241
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 1,
+						"w": 218,
+						"h": 240
+					},
+					"frame": {
+						"x": 668,
+						"y": 244,
+						"w": 218,
+						"h": 240
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 221,
+						"h": 239
+					},
+					"frame": {
+						"x": 873,
+						"y": 1,
+						"w": 221,
+						"h": 239
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 223,
+						"h": 238
+					},
+					"frame": {
+						"x": 888,
+						"y": 242,
+						"w": 223,
+						"h": 238
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 222,
+						"h": 238
+					},
+					"frame": {
+						"x": 1096,
+						"y": 1,
+						"w": 222,
+						"h": 238
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 224,
+						"h": 237
+					},
+					"frame": {
+						"x": 1113,
+						"y": 241,
+						"w": 224,
+						"h": 237
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 224,
+						"h": 237
+					},
+					"frame": {
+						"x": 1320,
+						"y": 1,
+						"w": 224,
+						"h": 237
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 225,
+						"h": 236
+					},
+					"frame": {
+						"x": 1339,
+						"y": 240,
+						"w": 225,
+						"h": 236
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_016.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 225,
+						"h": 236
+					},
+					"frame": {
+						"x": 1546,
+						"y": 1,
+						"w": 225,
+						"h": 236
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 228,
+						"h": 235
+					},
+					"frame": {
+						"x": 1566,
+						"y": 239,
+						"w": 228,
+						"h": 235
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 227,
+						"h": 235
+					},
+					"frame": {
+						"x": 1796,
+						"y": 1,
+						"w": 227,
+						"h": 235
+					}
+				},
+				{
+					"filename": "__fish_6_orange_idle_017.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 264,
+						"h": 246
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 1,
+						"w": 227,
+						"h": 235
+					},
+					"frame": {
+						"x": 1796,
+						"y": 238,
+						"w": 227,
+						"h": 235
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:b69105d0be5df82387e5e3276d589dbd:2055b7f904e217edd48a4d0fa886d83b:5bd70b7c589d90a1839c431e23e0e6dc$"
+	}
+}

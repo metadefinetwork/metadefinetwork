@@ -1,0 +1,427 @@
+﻿@model Core.Application.ViewModels.Fishing.FishingViewModel
+
+@{
+    ViewBag.Title = "Fishing";
+}
+@section Scripts{
+    <script src="~/admin-app/controllers/fishing/index.js" asp-append-version="true"></script>
+    <script>
+        var fishingObj = new FishingController();
+        fishingObj.initialize();
+    </script>
+    <script>
+        var totallake = @(Model?.Lake.Count());
+    </script>
+    <script src="~/lib/phaser/phaser.min.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/phaser-plugin-debug-game-scale@3.1.0"></script>
+    <script src="~/admin-app/controllers/fishing/game.js"></script>
+
+}
+@section Styles{
+    <link href="~/admin-app/controllers/fishing/index.css" rel="stylesheet" asp-append-version="true" />
+}
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <div class="post d-flex flex-column-fluid" id="kt_post">
+        <div id="kt_content_container" class="container">
+            <div class="card-header card-header-stretch overflow-auto" style="background-color: #2b2b40">
+                <ul class="nav nav-stretch nav-line-tabs fw-bold border-transparent flex-nowrap fs-5" role="tablist" id="kt_layout_builder_tabs">
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700 active" data-bs-toggle="tab" href="#kt_game" role="tab" aria-selected="false">Game</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700" data-bs-toggle="tab" id="tabPackage" href="#kt_market" role="tab" aria-selected="true">Marketplace</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray-700" data-bs-toggle="tab" id="tabCommission" href="#kt_item" role="tab" aria-selected="true">My Item</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane fade active show row" id="kt_game">
+                        <div id="game-content"></div>
+                    </div>
+                    <div class="tab-pane fade" id="kt_market">
+                        <div class="d-flex flex-column flex-lg-row">
+                            <div class="flex-column flex-lg-row-auto w-100 w-lg-250px w-xxl-325px mb-8 mb-lg-0 me-lg-9 me-5">
+                                <form action="#">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="position-relative">
+                                                <span class="svg-icon svg-icon-3 svg-icon-gray-500 position-absolute top-50 translate-middle ms-6">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                            <rect x="0" y="0" width="24" height="24" />
+                                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+                                                        </g>
+                                                    </svg>
+                                                </span>
+                                                <input type="text" class="form-control form-control-solid ps-10" name="search" id="txt-search-keyword" value="" placeholder="Search" />
+                                            </div>
+                                            <div class="separator separator-dashed my-8"></div>
+                                            <div class="mb-5">
+                                                <label class="fs-6 form-label fw-bolder text-dark">Type</label>
+                                                <select id="group-item" class="form-select form-select-solid" data-control="select2" data-placeholder="In Progress" data-hide-search="true">
+                                                    <option value="-1">All</option>
+                                                    <option value="1">Staking</option>
+                                                    <option value="2">Game</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-5">
+                                                <label class="fs-6 form-label fw-bolder text-dark">Item</label>
+                                                <select id="type-item" class="form-select form-select-solid" data-control="select2" data-placeholder="In Progress" data-hide-search="true">
+                                                    <option value="-1">All</option>
+                                                    <option value="1">Fishing Rod</option>
+                                                    <option value="2">Fishing Bait</option>
+                                                    <option value="3">Fishing Hook</option>
+                                                    <option value="4">Fishing Tank</option>
+                                                    <option value="6">Fishing Line</option>
+                                                    <option value="5">Fish</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-5">
+                                                <label class="fs-6 form-label fw-bolder text-dark">Max Price</label>
+                                                <div class="position-relative" data-kt-dialer="true" data-kt-dialer-min="1000" data-kt-dialer-max="50000" data-kt-dialer-step="1000" data-kt-dialer-prefix="$" data-kt-dialer-decimals="2">
+                                                    <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 start-0" data-kt-dialer-control="decrease">
+                                                        <span class="svg-icon svg-icon-1">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
+                                                                <rect fill="#000000" x="6" y="11" width="12" height="2" rx="1" />
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+                                                    <input type="text" id="price-item" class="form-control form-control-solid border-0 ps-12" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="$1000" />
+                                                    <button type="button" class="btn btn-icon btn-active-color-gray-700 position-absolute translate-middle-y top-50 end-0" data-kt-dialer-control="increase">
+                                                        <span class="svg-icon svg-icon-1">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                                <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10" />
+                                                                <path d="M11,11 L11,7 C11,6.44771525 11.4477153,6 12,6 C12.5522847,6 13,6.44771525 13,7 L13,11 L17,11 C17.5522847,11 18,11.4477153 18,12 C18,12.5522847 17.5522847,13 17,13 L13,13 L13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 L11,13 L7,13 C6.44771525,13 6,12.5522847 6,12 C6,11.4477153 6.44771525,11 7,11 L11,11 Z" fill="#000000" />
+                                                            </svg>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-end">
+                                                <a class="btn btn-primary" id="search-item">Search</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="flex-lg-row-fluid">
+                                <div class="tab-content">
+                                    <div id="kt_project_users_card_pane" class="tab-pane fade show active">
+                                        <div class="row g-6 g-xl-9" id="item-content">
+                                        </div>
+                                        @await Component.InvokeAsync("Paging")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="kt_item">
+                        <div class="card-header card-header-stretch overflow-auto" style="background-color: #2b2b40">
+                            <ul class="nav nav-stretch nav-line-tabs fw-bold border-transparent flex-nowrap fs-5" role="tablist" id="kt_layout_myitem_tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active text-gray-700" data-bs-toggle="tab" href="#kt_item_staking" role="tab" aria-selected="false">Staking</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-gray-700" data-bs-toggle="tab" id="tabPackage" href="#kt_item_game" role="tab" aria-selected="true">Game</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="kt_item_staking">
+                                <div class="row pd-t-1r" id="item-staking">
+                                </div>
+                                <div class="card mb-5 mb-xl-10 mg-t-1r">
+                                    <div class="card-body py-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                                                <thead>
+                                                    <tr class="fw-bolder text-muted">
+                                                        <th class="min-w-150px">
+                                                            Item Name
+                                                        </th>
+                                                        <th class="min-w-140px">Amount</th>
+                                                        <th class="min-w-90px">Rate (%)</th>
+                                                        <th class="min-w-90px">Amount Receive</th>
+                                                        <th class="min-w-120px">
+                                                            Receive Date
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbl-content-staking"></tbody>
+                                            </table>
+                                        </div>
+                                        @await Component.InvokeAsync("Paging")
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="kt_item_game">
+                                <div class="row pd-t-1r" id="item-game">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="kt_modal_buy_staking" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content rounded">
+            <div class="modal-header justify-content-end border-0 pb-0">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+                                <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                <rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body pt-0 pb-15 px-5 px-xl-20">
+                <div class="mb-13 text-center">
+                    <h1 class="mb-3">Invest a Plan</h1>
+                    <div class="text-muted fw-bold fs-5">
+                        If you need more info, please contact me
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="row mt-10">
+                        <div class="col-lg-6 mb-10 mb-lg-0">
+                            <div class="nav flex-column">
+                                @foreach (var item in Model.Periods)
+                                {
+                                    <div class="nav-link btn btn-outline btn-outline-dashed btn-color-dark btn-active btn-active-primary d-flex flex-stack text-start p-6 active mb-6" data-bs-toggle="tab">
+                                        <div class="d-flex align-items-center me-2">
+                                            <div class="form-check form-check-custom form-check-solid form-check-success me-6">
+                                                <input class="form-check-input" id="first-plan" type="radio" name="plan" value="@item.Id" />
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <h2 class="d-flex align-items-center fs-2 fw-bolder flex-wrap">@item.Period Months</h2>
+                                            </div>
+                                        </div>
+                                        <div class="ms-5">
+                                            <span class="fs-3x fw-bolder" data-kt-plan-price-month="39" data-kt-plan-price-annual="399">@item.Interest %</span>
+                                            <span class="fs-7 opacity-50">
+                                                /
+                                                <span data-kt-element="period">@item.Period Mon</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="tab-content rounded h-100 bg-light p-10">
+                                <div class="tab-pane fade show active" id="kt_item_info_plan">
+                                    <div class="pb-5">
+                                        <h2 class="fw-bolder text-dark item-buy-name"></h2>
+                                        <div id="item-image" class="">
+                                        </div>
+                                    </div>
+                                    <div class="pt-1">
+                                        @Html.AntiForgeryToken()
+                                        <div class="fv-row mb-4">
+                                            <label class="form-label fs-6 fw-bolder text-dark">Wallet Type</label>
+                                            <select id="walletType-staking" class="form-select form-select-lg form-select-solid">
+                                                <option value="1" selected="selected">Wallet MAR</option>
+                                                <option value="3">Wallet BNB</option>
+                                            </select>
+                                        </div>
+                                        <div class="fv-row mb-4">
+                                            <label class="form-label fs-6 fw-bolder text-dark">Balance</label>
+                                            <input class="form-control form-control-lg form-control-solid" id="WalletBalanceStaking" readonly="" autocomplete="off" value="0">
+                                        </div>
+                                        <div class="fv-row mb-4">
+                                            <label class="form-label fs-6 fw-bolder text-dark">Price</label>
+                                            <input class="form-control form-control-lg form-control-solid" id="AmountPaymentStaking" readonly="" autocomplete="off" value="0">
+                                        </div>
+                                        <input type="hidden" id="ItemId-Staking" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-center flex-row-fluid pt-12">
+                    <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="buy-staking">Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="kt_modal_buy_item" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded">
+            <div class="modal-header justify-content-end border-0 pb-0">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+                                <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                <rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body pt-0 pb-15 px-5 px-xl-20">
+                <div class="mb-13 text-center">
+                    <h1 class="mb-3">Buy Item</h1>
+                    <div class="text-muted fw-bold fs-5">
+                        If you need more info, please contact me
+                    </div>
+                </div>
+                <div class="d-flex flex-column">
+                    <div class="row mt-10">
+                        <div class="col-lg-12">
+                            <div class="tab-content rounded h-100 bg-light p-10">
+                                <div class="tab-pane fade show active" id="kt_item_info_plan">
+                                    <div class="pb-5">
+                                        <h2 class="fw-bolder text-dark item-buy-name"></h2>
+                                        <div id="item-image" class="">
+                                        </div>
+                                    </div>
+                                    <div class="pt-1">
+                                        @Html.AntiForgeryToken()
+                                        <div class="fv-row mb-4">
+                                            <label class="form-label fs-6 fw-bolder text-dark">Wallet Type</label>
+                                            <select id="walletType-buy" class="form-select form-select-lg form-select-solid">
+                                                <option value="1" selected="selected">Wallet MAR</option>
+                                                <option value="3">Wallet BNB</option>
+                                            </select>
+                                        </div>
+                                        <div class="fv-row mb-4">
+                                            <label class="form-label fs-6 fw-bolder text-dark">Balance</label>
+                                            <input class="form-control form-control-lg form-control-solid" id="WalletBalanceBuy" readonly="" autocomplete="off" value="0">
+                                        </div>
+                                        <div class="fv-row mb-4">
+                                            <label class="form-label fs-6 fw-bolder text-dark">Price</label>
+                                            <input class="form-control form-control-lg form-control-solid" id="AmountPaymentBuy" readonly="" autocomplete="off" value="0">
+                                        </div>
+                                        <input type="hidden" id="ItemId-Buy" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-center flex-row-fluid pt-12">
+                    <button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="buy-item">Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="item-template" type="x-tmpl-mustache">
+    <div class="col-md-6 col-xl-12 col-xxl-6">
+        <div class="card item-list-buy" style="cursor: pointer;" data-item-group="{{GroupItem}}" data-item-class="{{ClassName}}" data-item-name="{{Name}}" data-item-id="{{Id}}" data-item-price="{{Price}}">
+            <div class="card-body d-flex flex-center flex-column pt-12 p-9">
+                {{{Function}}}
+                <a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">{{Name}}</a>
+                <div class="fw-bold text-gray-400 mb-6"></div>
+                <div class="d-flex flex-center flex-wrap">
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{Price}} MAR</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{TypeName}}</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                       <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">Buy</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="item-template-staking" type="x-tmpl-mustache">
+    <div class="col-md-3 col-xl-6 col-xxl-3 pd-t-1r">
+        <div class="card item-list-staking" style="cursor: pointer;" data-item-group="{{GroupItem}}" data-item-class="{{ClassName}}" data-item-name="{{Name}}" data-item-id="{{Id}}" data-item-price="{{Price}}">
+            <div class="d-flex flex-center flex-column pt-12">
+                {{{Function}}}
+                <a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">{{Name}}</a>
+                <div class="fw-bold text-gray-400 mb-6"></div>
+                <div class="d-flex flex-center flex-wrap">
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{Price}} MAR</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{TypeName}}</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{StatusName}}</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{DateCreated}}</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                     @*<div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{DateExpired}}</div>
+                        <div class="fw-bold text-gray-400">Staking Date</div>
+                    </div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="item-template-game" type="x-tmpl-mustache">
+    <div class="col-md-3 col-xl-6 col-xxl-3 pd-t-1r">
+        <div class="card item-list-staking" style="cursor: pointer;" data-item-group="{{GroupItem}}" data-item-class="{{ClassName}}" data-item-name="{{Name}}" data-item-id="{{Id}}" data-item-price="{{Price}}">
+            <div class="card-body d-flex flex-center flex-column pt-12 p-9">
+                {{{Function}}}
+                <a href="#" class="fs-4 text-gray-800 text-hover-primary fw-bolder mb-0">{{Name}}</a>
+                <div class="fw-bold text-gray-400 mb-6"></div>
+                <div class="d-flex flex-center flex-wrap">
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{Price}} MAR</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{TypeName}}</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                    <div class="border border-gray-300 border-dashed rounded min-w-80px py-3 px-4 mx-2 mb-3">
+                        <div class="fs-6 fw-bolder text-gray-700">{{DateCreated}}</div>
+                        <div class="fw-bold text-gray-400"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script id="table-template-history-staking" type="x-tmpl-mustache">
+    <tr>
+        <td>
+            <a class="text-muted fw-bold text-muted d-block fs-7">{{ItemName}}</a>
+        </td>
+        <td>
+            <a class="text-dark fw-bold text-hover-primary d-block fs-7">{{Amount}}</a>
+        </td>
+        <td>
+            <a class=" fw-bold text-muted text-hover-primary d-block fs-7">{{InterestRate}}</a>
+        </td>
+        <td>
+            <a class="text-dark fw-bold text-hover-primary d-block fs-7">{{ReceivedAmount}}</a>
+        </td>
+        <td>
+            <a class="text-muted fw-bold text-muted d-block fs-7">{{DateCreated}}</a>
+        </td>
+    </tr>
+</script>

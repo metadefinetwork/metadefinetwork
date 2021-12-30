@@ -1,0 +1,278 @@
+﻿@model WalletViewModel
+@using Core.Utilities.Constants
+@{
+    ViewBag.Title = "Lucky Spin";
+}
+
+@section Styles{
+    <link href="~/Winwheel/examples/wheel_of_fortune/main.css" rel="stylesheet" />
+    <style>
+        .box-gift {
+            font-size: 17px;
+            padding: 15px;
+        }
+
+        label.item-gift {
+            background: linear-gradient( 45deg, #5ba804, #bcd00a);
+            width: 130px;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 2px;
+            margin-right: 10px;
+            border: 2px solid #eec510;
+        }
+
+        label.item-lose {
+            background: linear-gradient( 45deg,#640e0e,#d41a1a);
+            width: 130px;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 2px;
+            margin-right: 10px;
+            border: 2px solid #000000;
+        }
+    </style>
+}
+
+@section Scripts{
+
+    <script type="text/javascript" src="~/Winwheel/Winwheel.js"></script>
+    <script src="~/Winwheel/TweenMax.min.js"></script>
+    <script src="~/admin-app/controllers/game/lucky-round.js"></script>
+    <script>
+        var luckyRound = new LuckyRoundController();
+        luckyRound.initialize();
+    </script>
+}
+
+<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+    <div class="container" id="kt_content_container">
+        <div class="card  pb-20">
+            <div class="card-body pt-9 pb-0">
+                <div class="col-xl-6">
+                    <div class="card card-dashed h-xl-80 flex-row flex-stack flex-wrap p-6">
+                        <div class="d-flex flex-column py-2">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <div class="fs-5 fw-bolder">Wallet Ticket</div>
+                                    <div class="fs-5 fw-bold text-gray-700"><span class="numberFormat TicketBalance">0</span> TICKET</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center py-2">
+                            <button class="btn btn-sm btn-light-dark btn-active-color-success me-3" id="btnBuyTicket">BUY TICKET</button>
+                            <a href="/admin/game/index" class="btn btn-icon btn-light-dark btn-active-color-success btn-sm">
+                                <span class="svg-icon svg-icon-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                            <path d="M7,3 L17,3 C19.209139,3 21,4.790861 21,7 C21,9.209139 19.209139,11 17,11 L7,11 C4.790861,11 3,9.209139 3,7 C3,4.790861 4.790861,3 7,3 Z M7,9 C8.1045695,9 9,8.1045695 9,7 C9,5.8954305 8.1045695,5 7,5 C5.8954305,5 5,5.8954305 5,7 C5,8.1045695 5.8954305,9 7,9 Z" fill="#000000"></path>
+                                            <path d="M7,13 L17,13 C19.209139,13 21,14.790861 21,17 C21,19.209139 19.209139,21 17,21 L7,21 C4.790861,21 3,19.209139 3,17 C3,14.790861 4.790861,13 7,13 Z M17,19 C18.1045695,19 19,18.1045695 19,17 C19,15.8954305 18.1045695,15 17,15 C15.8954305,15 15,15.8954305 15,17 C15,18.1045695 15.8954305,19 17,19 Z" fill="#000000" opacity="0.3"></path>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div align="center">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td class="the_wheel" align="center" valign="center">
+                            <canvas id="canvas" width="360" height="360">
+                                Sorry, your browser doesn't support canvas. Please try another.
+                            </canvas>
+                        </td>
+                    </tr>
+                </table>
+                <div class="mt-10">
+                    <button id="spin_button" class="btn btn-success text-white me-3">Spin Now</button>
+                    <button id="spin_10_button" class="btn btn-primary text-white me-3">Spin 10</button>
+                    <button id="spin_all_button" class="btn btn-warning text-white me-3">Spin All</button>
+                    <button id="reset_button" class="btn btn-secondary text-white">Play Again</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5 mt-20 mt-xl-20 mb-xl-10">
+            <div class="card-header align-items-center border-0">
+                <h3 class="card-title fw-bolder text-dark fs-5">Lucky Spin History</h3>
+            </div>
+            <div class="card-body py-3">
+                <div class="table-responsive">
+                    <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                        <thead>
+                            <tr class="fw-bolder text-muted">
+                                <th class="min-w-90px">Sponsor<br />UserName</th>
+                                <th class="min-w-100px">Type</th>
+                                <th class="min-w-90px">Amount<br />Unit</th>
+                                <th class="">Address From<br />Address To</th>
+                                <th class="min-w-150px">Created Date<br />Updated Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbl-content"></tbody>
+                    </table>
+                </div>
+                @await Component.InvokeAsync("Paging")
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ic_modal_spin_lose_result">
+    <div class="modal-dialog modal-dialog-centered mw-350px">
+        <div class="modal-content rounded">
+            <div class="modal-header pb-0 border-0 justify-content-end"
+                 style="background: url(/images/games/images/lose.png);
+                       background-size: 350px 180px;
+                       background-repeat: no-repeat;
+                       height: 180px;">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" style="position: absolute; top: 10px; right: 10px;" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg style="height: 2rem !important; width: 2rem !important; background: #dbeece; border-radius: 10px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+                                <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                <rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="box-gift">
+                    <div class="fv-row mb-2">
+                        <label class="item-lose">Good Luck</label> x <label class="times-lose"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ic_modal_spin_result">
+    <div class="modal-dialog modal-dialog-centered mw-350px">
+        <div class="modal-content rounded">
+            <div class="modal-header pb-0 border-0 justify-content-end"
+                 style="background: url(/images/games/images/congratulations.png);
+                        background-size: 350px 180px;
+                        background-repeat: no-repeat;
+                        height: 180px;">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" style="position: absolute; top: 10px; right: 10px;" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg style="height: 2rem !important; width: 2rem !important; background: #dbeece; border-radius: 10px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+                                <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                <rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-6">
+                    <h4 class="mb-3">You have received the gift:</h4>
+                </div>
+                <div class="box-gift" id="tbl-content-spin">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="table-template-spin" type="x-tmpl-mustache">
+    <div class="fv-row mb-2">
+       <label class="item-gift">{{Message}}</label> x {{Times}}
+    </div>
+</script>
+
+<div class="modal fade" id="ic_modal_buy_ticket">
+    <div class="modal-dialog modal-dialog-centered mw-500px">
+        <div class="modal-content rounded">
+            <div class="modal-header pb-0 border-0 justify-content-end">
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g transform="translate(12.000000, 12.000000) rotate(-45.000000) translate(-12.000000, -12.000000) translate(4.000000, 4.000000)" fill="#000000">
+                                <rect fill="#000000" x="0" y="7" width="16" height="2" rx="1" />
+                                <rect fill="#000000" opacity="0.5" transform="translate(8.000000, 8.000000) rotate(-270.000000) translate(-8.000000, -8.000000)" x="0" y="7" width="16" height="2" rx="1" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-10">
+                <form class="form w-100">
+                    @Html.AntiForgeryToken()
+                    <div class="text-center mb-6">
+                        <h2 class="mb-3">Buy Ticket</h2>
+                        <h4 class="text-warning mb-3">Minimum buy 5 TICKET</h4>
+                        <div class="text-gray-800 fs-5">
+                            1 Ticket <span class="link-primary">=</span> 25 
+                        </div>
+                    </div>
+                    <div class="fv-row mb-4">
+                        <label class="form-label fs-6 fw-bolder text-dark">Wallet Type</label>
+                        <select id="walletType" class="form-select form-select-lg form-select-solid">
+                            <option value="1" selected>Wallet BNB BEP20</option>
+                            <option value="2">Wallet BNB Affiliate</option>
+                            <option value="3">Wallet Invest</option>
+                        </select>
+                    </div>
+                    <div class="fv-row mb-4">
+                        <div class="d-flex flex-stack mb-2">
+                            <label class="form-label fs-6 fw-bolder text-dark">Balance</label>
+                        </div>
+                        <input class="form-control form-control-lg form-control-solid" type="text" id="WalletBalance" readonly autocomplete="off" />
+                    </div>
+                    <div class="fv-row mb-4">
+                        <div class="d-flex flex-stack mb-2">
+                            <label class="form-label fs-6 fw-bolder text-dark">Ticket Order</label>
+                            <a class="link-white fs-6 fw-bolder">TICKET</a>
+                        </div>
+                        <input class="form-control form-control-lg form-control-solid" value="0" type="text" id="TicketOrder" autocomplete="off" style="border: 1px solid #262b2f; box-shadow: 0 0 13px #494e4c2e !important;" />
+                    </div>
+                    <div class="fv-row mb-4">
+                        <div class="d-flex flex-stack mb-2">
+                            <label class="form-label fs-6 fw-bolder text-dark">Amount Payment</label>
+                        </div>
+                        <input class="form-control form-control-lg form-control-solid" value="0" readonly type="text" id="AmountPayment" autocomplete="off" />
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="btnConfirmBuyTicket" class="btn btn-lg btn-success mb-5">
+                            <span class="indicator-label">Submit</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <td>
+            <a href="#" class=" fw-bold text-muted text-hover-primary d-block fs-7">{{Sponsor}}</a>
+            <a href="#" class="fw-bold text-muted text-hover-primary d-block fs-7">{{UserName}}</a>
+        </td>
+        <td>
+            <a href="#" class="text-dark fw-bold text-hover-primary d-block fs-7">{{TypeName}}</a>
+        </td>
+        <td>
+            <a href="#" class="text-dark fw-bold text-hover-primary d-block fs-7">{{Amount}} {{UnitName}}</a>
+        </td>
+        <td>
+            <a href="#" class=" fw-bold text-muted text-hover-primary d-block fs-7">{{AddressFrom}}</a>
+            <a href="#" class="fw-bold text-muted text-hover-primary d-block fs-7">{{AddressTo}}</a>
+        </td>
+        <td>
+            <span class="text-muted fw-bold text-muted d-block fs-7">{{DateCreated}}</span>
+            <span class="text-muted fw-bold text-muted d-block fs-7">{{DateUpdated}}</span>
+        </td>
+    </tr>
+</script>

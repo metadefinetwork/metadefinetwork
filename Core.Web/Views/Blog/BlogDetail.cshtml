@@ -1,0 +1,42 @@
+﻿@model Core.Models.BlogViewModels.DetailViewModel
+@{
+    Layout = "_LayoutBlog";
+
+    ViewBag.Title = Model.Blog.SeoPageTitle;
+    ViewBag.Keywords = Model.Blog.SeoKeywords;
+    ViewBag.Description = Model.Blog.SeoDescription;
+    ViewBag.Image = Model.Blog.Image;
+    ViewBag.Url = $"https://.org/{Model.Blog.SeoAlias}-b.{Model.Blog.Id}.html";
+}
+@section Styles{
+    <style>
+        img {
+            max-width: 100%;
+        }
+
+        .news {
+            padding-top: 130px;
+            padding-bottom: 130px;
+        }
+    </style>
+}
+@section Scripts{
+}
+
+<section class="news">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section-header section-header--center section-header--small-margin">
+                    <span style="color:red;font-family:Roboto">@Model.Blog.DateModified.ToString("MM-dd-yyyy")</span>
+                    <h1 style="max-width:100%;font-size:30px;">@Model.Blog.Name</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                @Html.Raw(Model.Blog.MildContent)
+            </div>
+        </div>
+    </div>
+</section>

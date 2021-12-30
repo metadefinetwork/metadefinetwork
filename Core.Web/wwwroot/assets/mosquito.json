@@ -1,0 +1,230 @@
+{
+	"textures": [
+		{
+			"image": "mosquito.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 369,
+				"h": 1393
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "__female_gambusia_eat_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 22,
+						"w": 367,
+						"h": 138
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 367,
+						"h": 138
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 20,
+						"y": 22,
+						"w": 347,
+						"h": 138
+					},
+					"frame": {
+						"x": 1,
+						"y": 141,
+						"w": 347,
+						"h": 138
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 21,
+						"y": 22,
+						"w": 344,
+						"h": 138
+					},
+					"frame": {
+						"x": 1,
+						"y": 281,
+						"w": 344,
+						"h": 138
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 23,
+						"y": 22,
+						"w": 341,
+						"h": 138
+					},
+					"frame": {
+						"x": 1,
+						"y": 421,
+						"w": 341,
+						"h": 138
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 24,
+						"y": 22,
+						"w": 338,
+						"h": 138
+					},
+					"frame": {
+						"x": 1,
+						"y": 561,
+						"w": 338,
+						"h": 138
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 26,
+						"y": 22,
+						"w": 335,
+						"h": 138
+					},
+					"frame": {
+						"x": 1,
+						"y": 701,
+						"w": 335,
+						"h": 138
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 27,
+						"y": 22,
+						"w": 332,
+						"h": 138
+					},
+					"frame": {
+						"x": 1,
+						"y": 841,
+						"w": 332,
+						"h": 138
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 28,
+						"y": 22,
+						"w": 315,
+						"h": 137
+					},
+					"frame": {
+						"x": 1,
+						"y": 981,
+						"w": 315,
+						"h": 137
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 23,
+						"w": 298,
+						"h": 135
+					},
+					"frame": {
+						"x": 1,
+						"y": 1120,
+						"w": 298,
+						"h": 135
+					}
+				},
+				{
+					"filename": "__female_gambusia_eat_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 368,
+						"h": 160
+					},
+					"spriteSourceSize": {
+						"x": 29,
+						"y": 23,
+						"w": 285,
+						"h": 135
+					},
+					"frame": {
+						"x": 1,
+						"y": 1257,
+						"w": 285,
+						"h": 135
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:313e30a80f35aee406334adbe7e6244d:f69d3213323440910ab58053cb349748:cd8c54715fae9665335968894a661c87$"
+	}
+}

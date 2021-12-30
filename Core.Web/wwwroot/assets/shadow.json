@@ -1,0 +1,356 @@
+{
+	"textures": [
+		{
+			"image": "shadow.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 980,
+				"h": 1066
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "black-fish-3-swim_000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 10,
+						"y": 0,
+						"w": 332,
+						"h": 179
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 332,
+						"h": 179
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_001.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 0,
+						"w": 330,
+						"h": 179
+					},
+					"frame": {
+						"x": 1,
+						"y": 182,
+						"w": 330,
+						"h": 179
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_015.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 9,
+						"y": 1,
+						"w": 329,
+						"h": 178
+					},
+					"frame": {
+						"x": 335,
+						"y": 1,
+						"w": 329,
+						"h": 178
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_006.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 13,
+						"w": 313,
+						"h": 180
+					},
+					"frame": {
+						"x": 666,
+						"y": 1,
+						"w": 313,
+						"h": 180
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_002.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 2,
+						"w": 326,
+						"h": 178
+					},
+					"frame": {
+						"x": 1,
+						"y": 363,
+						"w": 326,
+						"h": 178
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_004.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 320,
+						"h": 184
+					},
+					"frame": {
+						"x": 1,
+						"y": 543,
+						"w": 320,
+						"h": 184
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_012.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 5,
+						"y": 7,
+						"w": 319,
+						"h": 183
+					},
+					"frame": {
+						"x": 1,
+						"y": 729,
+						"w": 319,
+						"h": 183
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_014.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 8,
+						"y": 3,
+						"w": 326,
+						"h": 176
+					},
+					"frame": {
+						"x": 335,
+						"y": 181,
+						"w": 326,
+						"h": 176
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_005.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 316,
+						"h": 183
+					},
+					"frame": {
+						"x": 663,
+						"y": 183,
+						"w": 316,
+						"h": 183
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_003.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 5,
+						"w": 323,
+						"h": 180
+					},
+					"frame": {
+						"x": 333,
+						"y": 359,
+						"w": 323,
+						"h": 180
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_011.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 10,
+						"w": 315,
+						"h": 183
+					},
+					"frame": {
+						"x": 658,
+						"y": 368,
+						"w": 315,
+						"h": 183
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_013.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 6,
+						"y": 5,
+						"w": 323,
+						"h": 178
+					},
+					"frame": {
+						"x": 329,
+						"y": 541,
+						"w": 323,
+						"h": 178
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_010.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 2,
+						"y": 13,
+						"w": 313,
+						"h": 180
+					},
+					"frame": {
+						"x": 654,
+						"y": 553,
+						"w": 313,
+						"h": 180
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_007.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 16,
+						"w": 309,
+						"h": 174
+					},
+					"frame": {
+						"x": 323,
+						"y": 721,
+						"w": 309,
+						"h": 174
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_009.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 1,
+						"y": 16,
+						"w": 309,
+						"h": 174
+					},
+					"frame": {
+						"x": 634,
+						"y": 735,
+						"w": 309,
+						"h": 174
+					}
+				},
+				{
+					"filename": "black-fish-3-swim_008.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 342,
+						"h": 193
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 16,
+						"w": 305,
+						"h": 168
+					},
+					"frame": {
+						"x": 322,
+						"y": 897,
+						"w": 305,
+						"h": 168
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:4897ec043410e75d35746c2506f1dbf6:e558d2018d96a54097532df1e0c04045:46c9bb88d1bb6a8e73b5098eb9e6bcfd$"
+	}
+}

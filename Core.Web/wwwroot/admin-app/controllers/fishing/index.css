@@ -1,0 +1,382 @@
+﻿.bait-4 {
+    background-image: url(../../../images/games/bait/Bait4.png) !important;
+    width: 203px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 203px 175px;
+}
+.bait-3 {
+    background-image: url(../../../images/games/bait/Bait3.png) !important;
+    width: 203px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 203px 175px;
+}
+.bait-2 {
+    background-image: url(../../../images/games/bait/Bait2.png) !important;
+    width: 203px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 203px 175px;
+}
+.bait-1 {
+    background-image: url(../../../images/games/bait/Bait1.png) !important;
+    width: 203px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 203px 175px;
+}
+.solanazao {
+    background-image: url(../../../images/games/Rod/Solanazao.png) !important;
+    width: 100px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 100px 175px;
+}
+.bandzao {
+    background-image: url(../../../images/games/Rod/Bandzao.png) !important;
+    width: 100px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 100px 175px;
+    margin: 0 auto;
+}
+.kusamazao {
+    background-image: url(../../../images/games/Rod/Kusamazao.png) !important;
+    width: 203px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 100px 175px;
+}
+.serumzao {
+    background-image: url(../../../images/games/Rod/Serumzao.png) !important;
+    width: 203px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 100px 175px;
+}
+.enormous-fish-hook {
+    background-image: url(../../../images/games/hook/Hook4.png) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+.little-fish-hook {
+    background-image: url(../../../images/games/hook/Hook1.png) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+.big-fish-hook {
+    background-image: url(../../../images/games/hook/Hook2.png) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+.round-fish-hook {
+    background-image: url(../../../images/games/hook/Hook3.png) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+
+.little-fish-tank {
+    background-image: url(../../../images/games/lake/lake1.jpg) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+
+.big-fish-tank {
+    background-image: url(../../../images/games/lake/lake2.jpg) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+
+.round-fish-tank {
+    background-image: url(../../../images/games/lake/lake3.jpg) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+
+.enormous-fish-tank {
+    background-image: url(../../../images/games/lake/lake4.jpg) !important;
+    width: 157px;
+    height: 175px;
+    background-repeat: no-repeat;
+    background-size: 157px 175px;
+}
+.line-water {
+    background-image: url(../../../images/games/line/line1.png) !important;
+    width: 225px;
+    height: 176px;
+    background-repeat: no-repeat;
+    background-size: 225px 176px;
+    margin: 0 auto;
+}
+.pd-t-1r {
+    padding-top: 1rem !important
+}
+.mg-t-1r {
+    margin-top: 1rem !important
+}
+
+.fish-shadow {
+    width: calc(47px * 5);
+    height: calc(832px * 5);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-shadow {
+    animation: moveSpritesheet6 1s steps(16) infinite;
+    width: calc(750px * 5);
+    position: absolute;
+    max-width: unset !important;
+}
+@keyframes moveSpritesheet6 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+.fish-mosquito {
+    width: calc(47px * 5);
+    height: calc(832px * 5);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-mosquito {
+    animation: moveSpritesheet8 1s steps(20) infinite;
+    width: calc(880px * 5);
+    position: absolute;
+    max-width: unset !important;
+}
+
+
+@keyframes moveSpritesheet8 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+
+.fish-gold {
+    width: calc(47px * 5);
+    height: calc(832px * 5);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-gold {
+    animation: moveSpritesheet10 1s steps(6) infinite;
+    width: calc(284px * 5);
+    position: absolute;
+    max-width: unset !important;
+}
+
+
+@keyframes moveSpritesheet10 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+
+.fish-toxin {
+    width: calc(47px * 5);
+    height: calc(832px * 5);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-toxin {
+    animation: moveSpritesheet7 1s steps(12) infinite;
+    width: calc(565px * 5);
+    position: absolute;
+    max-width: unset !important;
+}
+
+
+@keyframes moveSpritesheet7 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+
+.fish-tuna {
+    width: calc(47px * 5);
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.Character_fish-tuna {
+    animation: moveSpritesheet 1s steps(8) infinite;
+    width: calc(380px * 5);
+    position: absolute;
+    max-width: unset !important;
+}
+
+
+@keyframes moveSpritesheet {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+
+.fish-cartoon {
+    width: calc(47px * 4);
+    height: calc(832px * 4);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-cartoon {
+    animation: moveSpritesheet1 0.7s steps(6) infinite;
+    width: calc(280px * 4);
+    position: absolute;
+    max-width: unset !important;
+}
+
+@keyframes moveSpritesheet1 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+
+.fish-destroy {
+    width: calc(47px * 5);
+    height: calc(832px * 5);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-destroy {
+    animation: moveSpritesheet3 0.7s steps(12) infinite;
+    width: calc(565px * 5);
+    position: absolute;
+    max-width: unset !important;
+}
+
+
+@keyframes moveSpritesheet3 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+.fish-emeraldo {
+    width: calc(47px * 4);
+    height: calc(832px * 4);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+.Character_fish-emeraldo {
+    animation: moveSpritesheet4 1s steps(18) infinite;
+    width: calc(856px * 4);
+    position: absolute;
+    max-width: unset !important;
+}
+@keyframes moveSpritesheet4 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+.fish-funny {
+    width: calc(47px * 4);
+    height: calc(832px * 4);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-funny {
+    animation: moveSpritesheet5 1s steps(18) infinite;
+    width: calc(856px * 4);
+    position: absolute;
+    max-width: unset !important;
+}
+@keyframes moveSpritesheet5 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+.fish-scary {
+    width: calc(47px * 5);
+    height: calc(832px * 5);
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.Character_fish-scary {
+    animation: moveSpritesheet9 0.5s steps(4) infinite;
+    width: calc(188px * 5);
+    position: absolute;
+    max-width: unset !important;
+}
+
+
+@keyframes moveSpritesheet9 {
+    from {
+        transform: translate3d(0px,0,0)
+    }
+
+    to {
+        transform: translate3d(-100%,0,0)
+    }
+}
+
+#game-content {
+    padding-left:0px !important;
+}

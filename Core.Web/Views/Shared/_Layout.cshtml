@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="zxx" class="js">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="~/images/metadefiicon.png">
+    <!-- Site Title  -->
+    <title>Meta DeFi | Automatic Decentralized Financial Transactions</title>
+
+    <!-- Bundle and Base CSS -->
+    <link href="~/client-side/metadefi/main-html/assets/css/vendor.bundle.css" rel="stylesheet" />
+    <link href="~/client-side/metadefi/main-html/assets/css/style-lavender.css" rel="stylesheet" />
+    <!-- Extra CSS -->
+    <link href="~/client-side/metadefi/main-html/assets/css/theme.css" rel="stylesheet" />
+
+    @*<style>
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /*background: linear-gradient(179deg,#000000cf,transparent),url(images/bg-noel.png);*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index: 1;
+        }
+    </style>*@
+
+    @RenderSection("Styles", required: false)
+
+</head>
+
+<body class="nk-body body-wider mode-onepage" id="kt_body">
+    <div class="nk-wrap">
+        @await Html.PartialAsync("_Header")
+
+        @RenderBody()
+
+        @await Html.PartialAsync("_Footer")
+        @await Html.PartialAsync("_DAppConnectModal")
+        @*<div id="particles-bg" class="particles-container particles-bg" data-pt-base="#00c0fa" data-pt-base-op=".3" data-pt-line="#2b56f5" data-pt-line-op=".5" data-pt-shape="#00c0fa" data-pt-shape-op=".2"></div>*@
+    </div>
+
+    <div class="preloader"><span class="spinner spinner-round"></span></div>
+
+    <!-- JavaScript -->
+    <script src="~/client-side/metadefi/main-html/assets/js/jquery.bundle.js?ver=1930"></script>
+    <script src="~/client-side/metadefi/main-html/assets/js/scripts.js?ver=1930"></script>
+    <script src="~/client-side/metadefi/main-html/assets/js/charts.js"></script>
+
+    <link href="~/admin-side/demo1/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/admin-side/demo1/dist/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="~/admin-side/demo1/dist/assets/js/scripts.bundle.js"></script>
+
+    <script src="~/client-app/shared/be.js"></script>
+
+    <script src="~/client-app/controllers/feedback/index.js"></script>
+    <script>
+        var feedbackObj = new FeedbackController;
+        feedbackObj.initialize()
+    </script>
+
+    <script src="~/lib/web3/web3.min.js"></script>
+    <script src="~/client-app/shared/dapp-helper.js" asp-append-version="true"></script>
+    <script>
+        var dapp = new DAppHelper.DApp();
+        dapp.init();
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
